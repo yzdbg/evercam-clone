@@ -71,7 +71,7 @@ export default {
     },
     methods: {
         signin(){
-            console.log(this.email, this.password)
+            this.$store.dispatch('access/SIGN_IN', {email: this.email, password: this.password})
         }
     }
 };
