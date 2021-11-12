@@ -12,12 +12,12 @@
                 </span>
             </div>
             <nav class="mt-10 px-6 ">
-                <camera-group groupName="nami"/>
-                <camera-group groupName="zebi" :group="[1,2,3]"/>
-                <camera-group groupName="nami"/>
-                <camera-group groupName="zebi" :group="[1,2,3]"/>
-                <camera-group groupName="nami"/>
-                <camera-group groupName="zebi" :group="[1,2,3]"/>
+                <camera-group groupName="element"/>
+                <camera-group groupName="element" :group="[1,2,3]"/>
+                <camera-group groupName="element"/>
+                <camera-group groupName="element" :group="[1,2,3]"/>
+                <camera-group groupName="element"/>
+                <camera-group groupName="element" :group="[1,2,3]"/>
             </nav>
             <div class="absolute bottom-0 my-10">
                 <a class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors duration-200 flex items-center py-2 px-8" href="#">
