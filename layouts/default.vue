@@ -11,13 +11,11 @@
                     Cameras
                 </span>
             </div>
-            <nav class="mt-10 px-6 ">
-                <camera-group groupName="element"/>
-                <camera-group groupName="element" :group="[1,2,3]"/>
-                <camera-group groupName="element"/>
-                <camera-group groupName="element" :group="[1,2,3]"/>
-                <camera-group groupName="element"/>
-                <camera-group groupName="element" :group="[1,2,3]"/>
+            <nav class="mt-10 px-6 h-3/5 ">
+                <search-bar/>
+                <div class="scroll m-0 p-0 h-full overflow-y-scroll">
+                    <camera-group v-for="camera in cameras" :key="camera.id" :groupName="camera.name"></camera-group>
+                </div>
             </nav>
             <div class="absolute bottom-0 my-10">
                 <a class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors duration-200 flex items-center py-2 px-8" href="#">
@@ -44,8 +42,32 @@
 
 <script>
 import CameraGroup from '~/components/CameraGroup.vue';
+import SearchBar from '~/components/SearchBar.vue';
+import {mapGetters} from'vuex'
 
 export default {
-  components: { CameraGroup },
+  components: { CameraGroup, SearchBar },
+  computed: {
+    ...mapGetters({
+      cameras: "access/GET_CAMERAS",
+      token: "access/GET_TOKEN",
+    }),
+  },
 };
 </script>
+
+<style>
+.scroll::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 50%;
+}
+ 
+.scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.scroll::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+</style>

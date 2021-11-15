@@ -69,6 +69,7 @@ export default {
             password: ""
         }
     },
+    layout : "simple",
     methods: {
         signin(){
             this.$store.dispatch('access/SIGN_IN', {email: this.email, password: this.password})
