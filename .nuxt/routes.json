@@ -1,0 +1,16 @@
+[
+  {
+    "name": "cameras",
+    "path": "/cameras",
+    "component": "/home/nosth/work/vue/evercam-clone/pages/cameras/index.vue",
+    "chunkName": "pages/cameras/index",
+    "_name": "_dc62582e"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/nosth/work/vue/evercam-clone/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_3e44426c"
+  }
+]
