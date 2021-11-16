@@ -12,9 +12,12 @@
                 </span>
             </div>
             <search-bar class="mt-10 mx-6"/>
-            <nav class="mt-10 px-6 h-3/5 scroll overflow-y-scroll">
-                
-                <div class=" m-0 p-0 h-full ">
+
+            <span class="text-gray-600 ml-10 mt-9 ">Projects</span>
+            <nav class="mt-3 px-6 h-3/5 scroll overflow-y-scroll">
+
+
+                <div class=" m-0 p-0  h-full ">
                     <camera-group v-for="camera in cameras" :key="camera.id" :groupName="camera.name"></camera-group>
                 </div>
             </nav>
