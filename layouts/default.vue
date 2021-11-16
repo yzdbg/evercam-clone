@@ -11,9 +11,10 @@
                     Cameras
                 </span>
             </div>
-            <nav class="mt-10 px-6 h-3/5 ">
-                <search-bar/>
-                <div class="scroll m-0 p-0 h-full overflow-y-scroll">
+            <search-bar class="mt-10 mx-6"/>
+            <nav class="mt-10 px-6 h-3/5 scroll overflow-y-scroll">
+                
+                <div class=" m-0 p-0 h-full ">
                     <camera-group v-for="camera in cameras" :key="camera.id" :groupName="camera.name"></camera-group>
                 </div>
             </nav>
@@ -57,17 +58,26 @@ export default {
 </script>
 
 <style>
-.scroll::-webkit-scrollbar {
-  width: 3px;
-  border-radius: 50%;
-}
- 
-.scroll::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
- 
-.scroll::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-}
+
+        .scroll::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        .scroll::-webkit-scrollbar-track {
+            background: rgba(17, 24, 39,1);
+        }
+
+        .scroll::-webkit-scrollbar-thumb {
+            background: rgba(55, 65, 81,1);
+            border-radius: 7px;
+        }
+
+        .scroll::-webkit-scrollbar-thumb:hover {
+            background:  rgba(75, 85, 99, 1);
+        }
+
+        .no-scroll::-webkit-scrollbar {
+            width: 0px;
+        }
+
 </style>

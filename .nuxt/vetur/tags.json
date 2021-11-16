@@ -2,6 +2,9 @@
   "CameraGroup": {
     "description": "Auto imported from components/CameraGroup.vue"
   },
+  "Project": {
+    "description": "Auto imported from components/Project.vue"
+  },
   "SearchBar": {
     "description": "Auto imported from components/SearchBar.vue"
   }

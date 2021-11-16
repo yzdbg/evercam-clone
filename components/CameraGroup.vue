@@ -18,7 +18,7 @@
       rounded-lg
     "
   >
-    <span class="mx-4 text-lg font-normal">
+    <span class="mx-4 text-md font-normal">
       {{ groupName }}
     </span>
     <chevron-down-icon
@@ -49,7 +49,7 @@
           rounded-lg
         "
       >
-        <span class="mx-4 text-lg font-normal">
+        <span class="mx-4 text-sm font-normal">
           {{ camera }}
         </span>
       </div>

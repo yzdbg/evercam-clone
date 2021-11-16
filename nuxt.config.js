@@ -4,6 +4,9 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  router: {
+    middleware: "authentication"
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

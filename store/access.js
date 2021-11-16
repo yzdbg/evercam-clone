@@ -2,6 +2,7 @@
 export const state = () => ({
   token: '',
   cameras: [],
+  projects: []
 })
 
 export const mutations = {
@@ -11,6 +12,9 @@ export const mutations = {
   SET_CAMERAS(state, cams) {
     state.cameras = cams
   },
+  SET_PROJECTS(state, projects) {
+    state.projects = projects
+  },
 }
 
 export const getters = {
@@ -19,6 +23,9 @@ export const getters = {
   },
   GET_CAMERAS(state){
     return state.cameras;
+  },
+  GET_PROJECTS(state) {
+    return state.projects
   },
 }
 
@@ -63,5 +70,35 @@ export const actions = {
     }
     finally{
     }
+  },
+  GROUP_CAM_PROJECTS({commit,state}){
+
+    //some cameras have project : null
+    let cams = state.cameras.map((cam) =>
+      cam.project
+        ? {
+            project_name: cam.project.name,
+            project_id: cam.project.id,
+            cam_id: cam.id,
+            cam_name: cam.name,
+          }
+        : {
+            project_name: cam.name,
+            project_id: cam.id,
+            cam_id: cam.id,
+            cam_name: cam.name,
+          }
+    );
+    const projects = cams.reduce((groups, cam) => {
+      const group = groups[cam.project_id] || {
+        name: cam.project_name,
+        cameras: [],
+      };
+      group.cameras.push({ id: cam.cam_id, name: cam.cam_name });
+      groups[cam.project_id] = group;
+      return groups;
+    }, {});
+    commit('SET_PROJECTS',projects);
+
   }
 }
