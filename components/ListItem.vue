@@ -8,7 +8,8 @@
       flex
       justify-between
       items-center
-      p-2
+      px-4
+      py-3
       mb-3
       transition-colors
       
@@ -18,21 +19,28 @@
       rounded-lg
     "
   >
-    <span class="mx-4 text-md font-normal">
-      {{ groupName }}
+<div class="      flex
+      justify-start
+      items-center">
+      <grid-icon v-if="title == 'Dashboard'" size="1.5x"></grid-icon>
+    <folder-minus-icon v-if="title == 'Project board'" size="1.5x"></folder-minus-icon>
+
+    <span class="ml-5 text-md font-normal">
+      {{ title }}
     </span>
+</div>
     <chevron-down-icon
       :class="{ open: expanded }"
       class="transition-all ease-in-out duration-200"
-      v-if="group"
+      v-if="children"
       size="1.5x"
     ></chevron-down-icon>
   </div>
 
-    <div class="transition-all ease-in-out duration-200"  v-show="expanded">
+    <div class="transition-all ease-in-out duration-200 ml-3 border-l-2 border-gray-600"  v-show="expanded">
       <div
-        v-for="camera in group"
-        :key="camera"
+        v-for="child in children"
+        :key="child"
         class="
           hover:text-gray-800 hover:bg-gray-100
           flex
@@ -50,29 +58,33 @@
         "
       >
         <span class="mx-4 text-sm font-normal">
-          {{ camera }}
+          {{ child.name }}
         </span>
       </div>
     </div></div>
 </template>
 
 <script>
-import { ChevronUpIcon, ChevronDownIcon } from "vue-feather-icons";
+import { ChevronDownIcon } from "vue-feather-icons";
+import { FolderMinusIcon } from 'vue-feather-icons'
+import { GridIcon } from 'vue-feather-icons'
+
 export default {
   data() {
     return {
       expanded: false,
     };
   },
-  props: ["group", "groupName"],
+  props: ["children", "title"],
   components: {
     ChevronDownIcon,
-    ChevronUpIcon,
+    FolderMinusIcon,
+    GridIcon
   },
   methods: {
     expand() {
       this.expanded = !this.expanded;
-      console.log(this.group);
+      console.log(this.children);
     },
   },
 };

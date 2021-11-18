@@ -1,4 +1,5 @@
-export { default as CameraGroup } from '../../components/CameraGroup.vue'
+export { default as Folder } from '../../components/Folder.vue'
+export { default as ListItem } from '../../components/ListItem.vue'
 export { default as Project } from '../../components/Project.vue'
 export { default as SearchBar } from '../../components/SearchBar.vue'
 

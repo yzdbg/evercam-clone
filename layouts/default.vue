@@ -11,15 +11,15 @@
                     Cameras
                 </span>
             </div>
-            <search-bar class="mt-10 mx-6"/>
+            <!-- <search-bar class="mt-10 mx-6"/> -->
 
-            <span class="text-gray-600 ml-10 mt-9 ">Projects</span>
-            <nav class="mt-3 px-6 h-3/5 scroll overflow-y-scroll">
-
-
-                <div class=" m-0 p-0  h-full ">
-                    <camera-group v-for="camera in cameras" :key="camera.id" :groupName="camera.name"></camera-group>
-                </div>
+            
+            <nav class="mt-10 px-6 h-3/5 scroll overflow-y-scroll">
+                
+                <NuxtLink to="/cameras"><list-item title="Dashboard" :children="cameras"></list-item></NuxtLink>
+                <!-- <span class="text-gray-600 ml-10 mt-9 ">Projects</span> -->
+                <NuxtLink to="/projects"><list-item title="Project board" :children="projects"></list-item></NuxtLink>
+                
             </nav>
             <div class="absolute bottom-0 my-10">
                 <a class="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors duration-200 flex items-center py-2 px-8" href="#">
@@ -38,14 +38,12 @@
 
 
     </div>
-    <div class="">
         <Nuxt/>
-    </div>
 </div>
 </template>
 
 <script>
-import CameraGroup from '~/components/CameraGroup.vue';
+import CameraGroup from '~/components/ListItem.vue';
 import SearchBar from '~/components/SearchBar.vue';
 import {mapGetters} from'vuex'
 
@@ -55,6 +53,7 @@ export default {
     ...mapGetters({
       cameras: "access/GET_CAMERAS",
       token: "access/GET_TOKEN",
+      projects: "access/GET_PROJECTS"
     }),
   },
 };

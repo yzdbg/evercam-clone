@@ -1,6 +1,9 @@
 {
-  "CameraGroup": {
-    "description": "Auto imported from components/CameraGroup.vue"
+  "Folder": {
+    "description": "Auto imported from components/Folder.vue"
+  },
+  "ListItem": {
+    "description": "Auto imported from components/ListItem.vue"
   },
   "Project": {
     "description": "Auto imported from components/Project.vue"

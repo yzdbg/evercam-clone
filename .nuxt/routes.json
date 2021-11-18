@@ -7,6 +7,20 @@
     "_name": "_dc62582e"
   },
   {
+    "name": "projects",
+    "path": "/projects",
+    "component": "/home/nosth/work/vue/evercam-clone/pages/projects/index.vue",
+    "chunkName": "pages/projects/index",
+    "_name": "_08634296"
+  },
+  {
+    "name": "projects-project",
+    "path": "/projects/:project",
+    "component": "/home/nosth/work/vue/evercam-clone/pages/projects/_project.vue",
+    "chunkName": "pages/projects/_project",
+    "_name": "_f2c4f972"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/nosth/work/vue/evercam-clone/pages/index.vue",
