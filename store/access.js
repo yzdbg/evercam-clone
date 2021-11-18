@@ -33,7 +33,6 @@ export const actions = {
   async FETCH_CAMERAS({commit,state}){
     
     if(state.cameras.length){
-      console.log('Didnt fetch new cams kekw');
       return
     }
     try {
@@ -69,7 +68,7 @@ export const actions = {
       commit('SET_PROJECTS', [])
       console.log(response.token)
       this.$axios.setToken(response.token , "Bearer")
-      this.$router.push("/cameras")
+      this.$router.push("/projects")
     }
     catch(e){
       console.log(e)
@@ -97,12 +96,14 @@ export const actions = {
             project_id: cam.project.id,
             cam_id: cam.id,
             cam_name: cam.name,
+            cam : cam
           }
         : {
             project_name: cam.name,
             project_id: cam.id,
             cam_id: cam.id,
             cam_name: cam.name,
+            cam : cam
           }
     );
     const projects = cams.reduce((groups, cam) => {
@@ -110,10 +111,11 @@ export const actions = {
         name: cam.project_name,
         cameras: [],
       };
-      group.cameras.push({ id: cam.cam_id, name: cam.cam_name });
+      group.cameras.push(cam.cam);
       groups[cam.project_id] = group;
       return groups;
     }, {});
+    
     commit('SET_PROJECTS',projects);
 
   }

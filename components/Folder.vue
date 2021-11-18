@@ -1,43 +1,62 @@
 <template>
   <div>
-    <div class="bg-white rounded w-96 mx-auto rounded-2xl shadow-lg">
-<div class="rounded-lg overflow-hidden">
-          <img
-          class=""
+    <div class="bg-white rounded w-80 mx-auto my-6 rounded-2xl shadow-lg">
+      <div class="rounded-2xl overflow-hidden">
+        <img
+          class="h-48"
           v-if="type == 'camera'"
           :src="`https://media.evercam.io/v2/cameras/${content.id}/thumbnail?authorization=${token}`"
           :alt="content.name"
         />
-</div>
-      <div class=" p-3">
-
-        <div class="grid grid-cols-3 gap-4 mt-2">
-          <div class="h-8 bg-gray-200 rounded"></div>
-          <div class="h-8 bg-gray-200 rounded"></div>
-          <div class="h-8 bg-gray-200 rounded"></div>
-          <div class="h-8 col-span-2 bg-gray-200 rounded"></div>
-          <div class="h-8 bg-gray-200 rounded"></div>
-          <div class=""></div>
-          <div class="col-span-2"></div>
+      </div>
+      <div class="flex flex-row justify-between items-center p-3">
+        <div>
+          <div class="my-2">{{ content.name }}</div>
+          <div class="flex flex-row">
+            <div
+              class="my-2 status"
+              :class="content.is_online ? 'green' : 'red'"
+            ></div>
+            <span class="text-gray-400 pt-1 mx-3">{{ content.status }}</span>
+          </div>
         </div>
+        <more-vertical-icon
+          size="1.5x"
+          class="custom-class"
+        ></more-vertical-icon>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
+import { MoreVerticalIcon } from "vue-feather-icons";
 
 export default {
-
-computed:{
-      ...mapGetters({
+  components: {
+    MoreVerticalIcon,
+  },
+  mounted() {},
+  computed: {
+    ...mapGetters({
       token: "access/GET_TOKEN",
     }),
-},
-    props: ["type", "title", "content"]
+  },
+  props: ["type", "title", "content"],
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.status {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+.green {
+  background-color: #71f0bd;
+}
+.red {
+  background-color: #ff4545;
+}
 </style>

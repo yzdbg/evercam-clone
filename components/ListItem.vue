@@ -22,8 +22,8 @@
 <div class="      flex
       justify-start
       items-center">
-      <grid-icon v-if="title == 'Dashboard'" size="1.5x"></grid-icon>
-    <folder-minus-icon v-if="title == 'Project board'" size="1.5x"></folder-minus-icon>
+      <grid-icon v-if="title == 'All cameras'" size="1.5x"></grid-icon>
+    <folder-minus-icon v-if="title == 'Projects'" size="1.5x"></folder-minus-icon>
 
     <span class="ml-5 text-md font-normal">
       {{ title }}
@@ -72,10 +72,10 @@ import { GridIcon } from 'vue-feather-icons'
 export default {
   data() {
     return {
-      expanded: false,
+      expanded: !!this.initialState,
     };
   },
-  props: ["children", "title"],
+  props: ["children", "title", "initialState"],
   components: {
     ChevronDownIcon,
     FolderMinusIcon,

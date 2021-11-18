@@ -80,18 +80,21 @@
             <nav class="mt-10 pr-2 pl-2 h-3/5 scroll overflow-y-scroll">
               <NuxtLink to="/projects"
                 ><list-item
-                  title="Project board"
+                :initial-state="true"
+                  title="Projects"
                   :children="projects"
                 ></list-item
               ></NuxtLink>
               <NuxtLink to="/cameras"
-                ><list-item title="Dashboard" :children="cameras"></list-item
+                ><list-item title="All cameras" :children="cameras" ></list-item
               ></NuxtLink>
               <!-- <span class="text-gray-600 ml-10 mt-9 ">Projects</span> -->
             </nav>
-            <div @click="signout" class="absolute bottom-0 my-10">
-              <log-out-icon size="1.5x" class="custom-class"></log-out-icon>
+            <div @click="signout" class="absolute bottom-0 my-10 w-full mx-auto">
+<div class="flex flex-row pl-4 text-gray-300">
+                  <log-out-icon size="1.5x" class="custom-class"></log-out-icon>
               <span class="mx-4 font-medium"> Sign out </span>
+</div>
             </div>
           </div>
         </div>
