@@ -31,7 +31,9 @@ export const getters = {
 
 export const actions = {
   async FETCH_CAMERAS({commit,state}){
+    
     if(state.cameras.length){
+      console.log('Didnt fetch new cams kekw');
       return
     }
     try {
@@ -39,6 +41,7 @@ export const actions = {
         "https://media.evercam.io/v2/cameras",
          );
       commit('SET_CAMERAS',response.cameras);
+      console.log('response : ', response.cameras)
     } 
     catch (e) {
       console.log(e);
@@ -47,7 +50,7 @@ export const actions = {
     }
     
   },
-  async SIGN_IN({commit},info) {
+  async SIGN_IN({commit, state},info) {
     try{
       const response = await this.$axios
       .$post("https://media.evercam.io/v2/auth/login",{
@@ -60,7 +63,10 @@ export const actions = {
           "content-type": "application/json",
         }
       })
+
       commit('SET_TOKEN', response.token)
+      commit('SET_CAMERAS', [])
+      commit('SET_PROJECTS', [])
       console.log(response.token)
       this.$axios.setToken(response.token , "Bearer")
       this.$router.push("/cameras")
@@ -69,7 +75,17 @@ export const actions = {
       console.log(e)
     }
     finally{
+      
     }
+  },
+  SIGN_OUT({commit}){
+    commit('SET_TOKEN','');
+    commit('SET_CAMERAS',[]);
+    commit('SET_PROJECTS', [])
+    window.localStorage.removeItem('vuex');
+    window.localStorage.removeItem('state');
+    this.$axios.setToken(false)
+    this.$router.push("/")
   },
   GROUP_CAM_PROJECTS({commit,state}){
 

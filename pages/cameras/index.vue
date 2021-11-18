@@ -11,7 +11,7 @@ export default {
   mounted() {
     this.$store.dispatch("access/FETCH_CAMERAS");
     this.$store.dispatch("access/GROUP_CAM_PROJECTS");
-    console.log(this.projects)
+    console.log(this.token)
   },
   computed: {
     ...mapGetters({

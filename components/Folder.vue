@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="bg-white rounded w-96 mx-auto rounded-2xl shadow-lg">
-
-      <div class="bg-gray-200 h-48 p-3 overflow-hidden"></div>
-        <img
+<div class="rounded-lg overflow-hidden">
+          <img
           class=""
           v-if="type == 'camera'"
           :src="`https://media.evercam.io/v2/cameras/${content.id}/thumbnail?authorization=${token}`"
           :alt="content.name"
         />
-      <div class="h- p-3">
+</div>
+      <div class=" p-3">
 
         <div class="grid grid-cols-3 gap-4 mt-2">
           <div class="h-8 bg-gray-200 rounded"></div>
@@ -30,9 +30,11 @@ import {mapGetters} from 'vuex'
 
 export default {
 
-    ...mapGetters({
+computed:{
+      ...mapGetters({
       token: "access/GET_TOKEN",
     }),
+},
     props: ["type", "title", "content"]
 };
 </script>

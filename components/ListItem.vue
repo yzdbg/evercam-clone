@@ -40,7 +40,7 @@
     <div class="transition-all ease-in-out duration-200 ml-3 border-l-2 border-gray-600"  v-show="expanded">
       <div
         v-for="child in children"
-        :key="child"
+        :key="child.name"
         class="
           hover:text-gray-800 hover:bg-gray-100
           flex
