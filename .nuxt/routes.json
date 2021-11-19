@@ -14,11 +14,18 @@
     "_name": "_08634296"
   },
   {
-    "name": "projects-project",
-    "path": "/projects/:project",
-    "component": "/home/nosth/work/vue/evercam-clone/pages/projects/_project.vue",
-    "chunkName": "pages/projects/_project",
-    "_name": "_f2c4f972"
+    "name": "cameras-camera_exid",
+    "path": "/cameras/:camera_exid",
+    "component": "/home/nosth/work/vue/evercam-clone/pages/cameras/_camera_exid.vue",
+    "chunkName": "pages/cameras/_camera_exid",
+    "_name": "_681723e2"
+  },
+  {
+    "name": "projects-project_id",
+    "path": "/projects/:project_id",
+    "component": "/home/nosth/work/vue/evercam-clone/pages/projects/_project_id.vue",
+    "chunkName": "pages/projects/_project_id",
+    "_name": "_5ccb7443"
   },
   {
     "name": "index",

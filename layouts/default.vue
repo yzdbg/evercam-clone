@@ -77,16 +77,18 @@
             </div>
             <!-- <search-bar class="mt-10 mx-6"/> -->
 
-            <nav class="mt-10 pr-2 pl-2 h-3/5 scroll overflow-y-scroll">
+            <nav class="mt-10 pr-2 pl-2 pt-2 h-4/6 scroll overflow-y-scroll bg-gray-800">
               <NuxtLink to="/projects"
                 ><list-item
                 :initial-state="true"
                   title="Projects"
                   :children="projects"
+                  page="projects"
+                  route="projects"
                 ></list-item
               ></NuxtLink>
               <NuxtLink to="/cameras"
-                ><list-item title="All cameras" :children="cameras" ></list-item
+                ><list-item title="All cameras" :children="cameras" page="cameras" route="cameras"></list-item
               ></NuxtLink>
               <!-- <span class="text-gray-600 ml-10 mt-9 ">Projects</span> -->
             </nav>
@@ -112,6 +114,9 @@ import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "default",
+  mounted(){
+    console.log(this.projects);
+  },
   components: { CameraGroup, SearchBar, LogOutIcon },
   computed: {
     ...mapGetters({

@@ -2,7 +2,7 @@
 export const state = () => ({
   token: '',
   cameras: [],
-  projects: []
+  projects: {}
 })
 
 export const mutations = {
@@ -26,6 +26,12 @@ export const getters = {
   },
   GET_PROJECTS(state) {
     return state.projects
+  },
+  GET_CAMERA_BY_ID(state){
+    return (id) => state.cameras.find(camera => camera.id == id)
+  },
+  GET_PROJECT_BY_ID(state){
+    return (id) => state.projects[id]
   },
 }
 
@@ -109,6 +115,7 @@ export const actions = {
     const projects = cams.reduce((groups, cam) => {
       const group = groups[cam.project_id] || {
         name: cam.project_name,
+        id: cam.project_id,
         cameras: [],
       };
       group.cameras.push(cam.cam);

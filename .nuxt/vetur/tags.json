@@ -10,5 +10,8 @@
   },
   "SearchBar": {
     "description": "Auto imported from components/SearchBar.vue"
+  },
+  "Snapshot": {
+    "description": "Auto imported from components/Snapshot.vue"
   }
 }

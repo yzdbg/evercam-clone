@@ -10,3 +10,4 @@ You can directly use them in pages and other components without the need to impo
 - `<ListItem>` | `<list-item>` (components/ListItem.vue)
 - `<Project>` | `<project>` (components/Project.vue)
 - `<SearchBar>` | `<search-bar>` (components/SearchBar.vue)
+- `<Snapshot>` | `<snapshot>` (components/Snapshot.vue)
