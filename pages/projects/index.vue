@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 w-full h-screen w-full overflow-scroll scroll ml-3">
+  <div class="bg-gray-100 w-full h-screen w-full overflow-scroll scroll ">
     <div v-for="project in projects" :key="project.name">
       <div>
         <div class="flex flex-row">
@@ -38,6 +38,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

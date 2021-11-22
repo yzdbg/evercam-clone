@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-y-scroll scroll h-screen ">
+    <div class="bg-gray-100 overflow-y-scroll scroll w-full h-screen ">
               <div class="flex flex-row">
           <div class="text-2xl m-5 mb-0 font-bold">{{ project.name }}</div>
           <div class="flex-grow border-b-2"></div>

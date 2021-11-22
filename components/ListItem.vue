@@ -56,7 +56,7 @@
         :key="child.name"
       >
         <div
-          class="
+            class="
             hover:text-gray-800 hover:bg-gray-100
             flex
             justify-between
@@ -64,13 +64,18 @@
             p-2
             mb-3
             ml-3
-            transition-colors
             dark:hover:text-white dark:hover:bg-gray-600
             duration-200
             text-gray-600
-            dark:text-gray-400
+           
             rounded-lg
           "
+      :class="
+        $route.params.project_id == child.id || $route.params.camera_exid == child.id 
+          ? 'dark:text-white dark:bg-indigo-600'
+          : 'dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600'
+      "
+
         >
           <span class="mx-4 text-sm font-normal">
             {{ child.name }}
@@ -106,7 +111,7 @@ export default {
   computed: {
     isCurrentRoute() {
       return this.$route.name == this.page.toLowerCase();
-    },
+    }
   },
 };
 </script>
