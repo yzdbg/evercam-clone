@@ -1,4 +1,7 @@
 {
+  "CameraNavbar": {
+    "description": "Auto imported from components/CameraNavbar.vue"
+  },
   "Folder": {
     "description": "Auto imported from components/Folder.vue"
   },

@@ -14,18 +14,18 @@
     "_name": "_08634296"
   },
   {
-    "name": "cameras-camera_exid",
-    "path": "/cameras/:camera_exid",
-    "component": "/home/nosth/work/vue/evercam-clone/pages/cameras/_camera_exid.vue",
-    "chunkName": "pages/cameras/_camera_exid",
-    "_name": "_681723e2"
-  },
-  {
     "name": "projects-project_id",
     "path": "/projects/:project_id",
-    "component": "/home/nosth/work/vue/evercam-clone/pages/projects/_project_id.vue",
-    "chunkName": "pages/projects/_project_id",
-    "_name": "_5ccb7443"
+    "component": "/home/nosth/work/vue/evercam-clone/pages/projects/_project_id/index.vue",
+    "chunkName": "pages/projects/_project_id/index",
+    "_name": "_d11b06f4"
+  },
+  {
+    "name": "projects-project_id-camera_exid",
+    "path": "/projects/:project_id/:camera_exid",
+    "component": "/home/nosth/work/vue/evercam-clone/pages/projects/_project_id/_camera_exid.vue",
+    "chunkName": "pages/projects/_project_id/_camera_exid",
+    "_name": "_60c1feb6"
   },
   {
     "name": "index",

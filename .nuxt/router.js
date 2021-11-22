@@ -6,8 +6,8 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _dc62582e = () => interopDefault(import('../pages/cameras/index.vue' /* webpackChunkName: "pages/cameras/index" */))
 const _08634296 = () => interopDefault(import('../pages/projects/index.vue' /* webpackChunkName: "pages/projects/index" */))
-const _681723e2 = () => interopDefault(import('../pages/cameras/_camera_exid.vue' /* webpackChunkName: "pages/cameras/_camera_exid" */))
-const _5ccb7443 = () => interopDefault(import('../pages/projects/_project_id.vue' /* webpackChunkName: "pages/projects/_project_id" */))
+const _d11b06f4 = () => interopDefault(import('../pages/projects/_project_id/index.vue' /* webpackChunkName: "pages/projects/_project_id/index" */))
+const _60c1feb6 = () => interopDefault(import('../pages/projects/_project_id/_camera_exid.vue' /* webpackChunkName: "pages/projects/_project_id/_camera_exid" */))
 const _3e44426c = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -30,13 +30,13 @@ export const routerOptions = {
     component: _08634296,
     name: "projects"
   }, {
-    path: "/cameras/:camera_exid",
-    component: _681723e2,
-    name: "cameras-camera_exid"
-  }, {
     path: "/projects/:project_id",
-    component: _5ccb7443,
+    component: _d11b06f4,
     name: "projects-project_id"
+  }, {
+    path: "/projects/:project_id/:camera_exid",
+    component: _60c1feb6,
+    name: "projects-project_id-camera_exid"
   }, {
     path: "/",
     component: _3e44426c,

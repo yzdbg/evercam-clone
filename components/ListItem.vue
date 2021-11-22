@@ -72,7 +72,7 @@
           "
       :class="
         $route.params.project_id == child.id || $route.params.camera_exid == child.id 
-          ? 'dark:text-white dark:bg-indigo-600'
+          ? 'dark:text-white dark:bg-indigo-600 dark:hover:bg-indigo-600'
           : 'dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600'
       "
 

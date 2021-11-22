@@ -1,6 +1,12 @@
 <template>
-    <div>
-        <Snapshot :exid="id" :frequency="frequency" :cam="camera"/> 
+    <div class="h-screen grid grid-rows-10 w-full">
+      <div class="row-span-1 bg-black w-full">
+        <camera-navbar/>
+      </div>
+      <div class="row-span-9 bg-black w-full">
+              <Snapshot  :exid="id" :frequency="frequency" :cam="camera"/> 
+
+      </div>
     </div>
 </template>
 

@@ -11,7 +11,7 @@
           <NuxtLink
             v-for="camera in project.cameras"
             :key="camera.id"
-            :to="`/cameras/${camera.id}`"
+            :to="`/projects/${project.id}/${camera.id}`"
           >
             <folder class="mx-3" type="camera" :content="camera"></folder>
           </NuxtLink>

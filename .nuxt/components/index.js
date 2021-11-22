@@ -1,3 +1,4 @@
+export { default as CameraNavbar } from '../../components/CameraNavbar.vue'
 export { default as Folder } from '../../components/Folder.vue'
 export { default as ListItem } from '../../components/ListItem.vue'
 export { default as Project } from '../../components/Project.vue'
