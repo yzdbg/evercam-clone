@@ -1,19 +1,21 @@
 <template>
   <div>
-    <div class="relative flex flex-row  scroll" :class="project.cameras.length > 1 ? 'carousel' : 'single justify-center'">
+                  <div class="bg-gray-100 flex flex-row pb-3">
+          <div class="text-2xl m-5 mb-0 font-bold">{{ project.name }}</div>
+          <div class="flex-grow border-b-2"></div>
+        </div>
+    <div class="flex scroll flex-wrap w-full ">
 
-<span class="absolute top-0 right-0 px-4 py-2  text-center rounded-bl-md text-indigo-900  bg-indigo-200 bg-opacity-50 backdrop-filter backdrop-blur-sm">
-    {{project.name}}
-</span>
+      <nuxt-link class="single flex justify-center content-center items-center" v-for="camera in project.cameras" :key="camera.id" :to="`/projects/${project.id}/${camera.id}`">
 
-        <img v-for="camera in project.cameras" :key="camera.id"
-          class=""
+          <img 
           :src="`https://media.evercam.io/v2/cameras/${camera.id}/thumbnail?authorization=${token}`"
           :alt="camera.name"
         />
-      
+
+       </nuxt-link>
+       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -29,15 +31,10 @@ export default {
 </script>
 
 <style scoped>
-.carousel{
-  height: 66vh;
-  width: 100%;
-  overflow-x: scroll;
-}
 
 .single{
-  height: 50vh;
-  width: 100%;
+  max-height: 60vh;
+  width: 50%;
   background-color: black;
 }
 

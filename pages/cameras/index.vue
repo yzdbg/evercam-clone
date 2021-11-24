@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen overflow-y-scroll scroll">
+  <div class="h-screen overflow-y-scroll scroll bg-gray-100">
     <project v-for="project in projects" :key="project.name" :project="project"/>
   </div>
 </template>

@@ -57,6 +57,7 @@ export const actions = {
   },
   async SIGN_IN({commit, state},info) {
     try{
+      this.$axios.setToken(false)
       const response = await this.$axios
       .$post("https://media.evercam.io/v2/auth/login",{
           username: info.email,
