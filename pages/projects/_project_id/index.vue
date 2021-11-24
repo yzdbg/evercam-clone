@@ -5,13 +5,10 @@
           <div class="flex-grow border-b-2"></div>
         </div>
       <div class="flex content-center justify-around flex-wrap ">
-          <NuxtLink
-            v-for="camera in project.cameras"
-            :key="camera.id"
-            :to="`/projects/${project.id}/${camera.id}`"
-          >
-            <folder class="mx-3" type="camera" :content="camera"></folder>
-          </NuxtLink>
+
+            <folder             v-for="camera in project.cameras"
+            :key="camera.id" class="mx-3" type="camera" :content="camera"></folder>
+
         </div>
     </div>
 </template>

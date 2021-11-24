@@ -1,7 +1,9 @@
 export { default as CameraNavbar } from '../../components/CameraNavbar.vue'
+export { default as DropDownMenu } from '../../components/DropDownMenu.vue'
 export { default as Folder } from '../../components/Folder.vue'
 export { default as ListItem } from '../../components/ListItem.vue'
 export { default as Project } from '../../components/Project.vue'
+export { default as ProjectList } from '../../components/ProjectList.vue'
 export { default as SearchBar } from '../../components/SearchBar.vue'
 export { default as Snapshot } from '../../components/Snapshot.vue'
 

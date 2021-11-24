@@ -2,16 +2,28 @@
   <div>
     <div class="bg-white rounded w-80 mx-auto my-6 rounded-2xl shadow-lg">
       <div class="rounded-2xl overflow-hidden">
-        <img
+                              <NuxtLink
+
+            :to="`/projects/${content.project.id}/${content.id}`"
+          >
+                  <img
           class="h-48"
           v-if="type == 'camera'"
           :src="`https://media.evercam.io/v2/cameras/${content.id}/thumbnail?authorization=${token}`"
           :alt="content.name"
         />
+          </NuxtLink>
+
       </div>
       <div class="flex flex-row justify-between items-center p-3">
         <div>
-          <div class="my-2">{{ content.name }}</div>
+                                        <NuxtLink
+
+            :to="`/projects/${content.project.id}/${content.id}`"
+          >
+         <div class="my-2">{{ content.name }}</div>
+          </NuxtLink>
+ 
           <div class="flex flex-row">
             <div
               class="my-2 status"
@@ -20,10 +32,16 @@
             <span class="text-gray-400 pt-1 mx-3">{{ content.status }}</span>
           </div>
         </div>
+
+
+<div class="relative inline-block text-left">
         <more-vertical-icon
+          @click="openMenu"
           size="1.5x"
-          class="custom-class"
+          class="cursor-pointer"
         ></more-vertical-icon>
+<drop-down-menu :visible="open"></drop-down-menu>
+</div>
       </div>
     </div>
   </div>
@@ -34,6 +52,16 @@ import { mapGetters } from "vuex";
 import { MoreVerticalIcon } from "vue-feather-icons";
 
 export default {
+  data(){
+    return{
+      open: false,
+    }
+  },
+  methods:{
+    openMenu(){
+      this.open = !this.open
+    }
+  },
   components: {
     MoreVerticalIcon,
   },

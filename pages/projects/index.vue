@@ -1,22 +1,7 @@
 <template>
   <div class="bg-gray-100 w-full h-screen w-full overflow-scroll scroll ">
     <div v-for="project in projects" :key="project.name">
-      <div>
-        <div class="flex flex-row">
-          <div class="text-2xl m-5 mb-0 font-bold">{{ project.name }}</div>
-          <div class="flex-grow border-b-2"></div>
-        </div>
-
-        <div class="flex content-center flex-wrap justify-around scroll">
-          <NuxtLink
-            v-for="camera in project.cameras"
-            :key="camera.id"
-            :to="`/projects/${project.id}/${camera.id}`"
-          >
-            <folder class="mx-3" type="camera" :content="camera"></folder>
-          </NuxtLink>
-        </div>
-      </div>
+      <project-list :project="project"></project-list>
     </div>
   </div>
 </template>

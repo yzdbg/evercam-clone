@@ -2,6 +2,9 @@
   "CameraNavbar": {
     "description": "Auto imported from components/CameraNavbar.vue"
   },
+  "DropDownMenu": {
+    "description": "Auto imported from components/DropDownMenu.vue"
+  },
   "Folder": {
     "description": "Auto imported from components/Folder.vue"
   },
@@ -10,6 +13,9 @@
   },
   "Project": {
     "description": "Auto imported from components/Project.vue"
+  },
+  "ProjectList": {
+    "description": "Auto imported from components/ProjectList.vue"
   },
   "SearchBar": {
     "description": "Auto imported from components/SearchBar.vue"
